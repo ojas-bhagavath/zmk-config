@@ -121,7 +121,7 @@
                     &trans        &trans       &trans       &trans    &trans    &trans  &mkp LCLK       &mkp RCLK       &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp DOWN UP>;
         };
 
         adjust_layer {
