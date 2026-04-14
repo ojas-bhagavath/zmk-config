@@ -74,9 +74,7 @@
                           &sk LGUI  &sk LALT  &sk LCTRL  &sk LEFT_SHIFT  &sl 1    &sl 2  &kp SPACE  &sk RCTRL  &sk RIGHT_ALT  &sk RGUI
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp LS(C_AC_SCROLL_DOWN) LS(C_AC_SCROLL_UP)>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
         };
 
         lower_layer {
