@@ -43,7 +43,12 @@
         };
     };
 
-    behaviors {
+behaviors {
+        rot_msc: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+        };
     };
 
     keymap {
@@ -69,7 +74,7 @@
   &mt LCTRL CAPSLOCK   &kp Z    &kp X      &kp C      &kp V       &kp B            &none           &none   &kp N                   &kp M       &kp COMMA       &kp DOT    &kp FSLH   &kp APOS
                                 &sk LGUI   &sk LALT   &sk LCTRL   &sk LEFT_SHIFT   &sl 1           &sl 2   &mt RIGHT_SHIFT SPACE   &sk RCTRL   &sk RIGHT_ALT   &sk RGUI
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>, <&inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&rot_msc SCRL_LEFT SCRL_RIGHT>, <&rot_msc SCRL_UP SCRL_DOWN>;
 
         };
 
