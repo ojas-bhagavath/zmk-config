@@ -11,11 +11,15 @@
 
 // Encoders
 
-&sensors { triggers-per-rotation = <20>; };
+&sensors {
+    left_config {
+        triggers-per-rotation = <20>;
+    };
 
-&left_encoder { steps = <20>; };
-
-&right_encoder { steps = <20>; };
+    right_config {
+        triggers-per-rotation = <20>;
+    };
+};
 
 #define ZMK_MOUSE_SCRL_VAL 140
 #define BASE 0
