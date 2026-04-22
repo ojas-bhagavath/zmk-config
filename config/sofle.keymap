@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -45,17 +45,17 @@
 
     behaviors {
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-        tap-ms = <25>;
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <5>;
         };
 
         scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
-            tap-ms = <25>;
+            tap-ms = <5>;
         };
     };
 
@@ -106,11 +106,11 @@
   &trans    &kp SLASH   &kp ASTRK          &kp MINUS        &kp PLUS               &kp EQUAL       &none            &none    &kp QUESTION   &kp SINGLE_QUOTE        &kp UNDERSCORE    &kp RIGHT_BRACE        &kp PIPE                &trans
                         &trans             &trans           &trans                 &trans          &trans           &trans   &trans         &trans                  &trans            &trans
             >;
-        };
+    };
 
-        raise_layer {
-            display-name = "nav";
-            bindings = <
+    raise_layer {
+        display-name = "nav";
+        bindings = <
 //    ┌──────┬───────────┬──────────┬──────────┬──────────────┬───────┐                     ┌────────────────┬────────────────┬──────────────┬────────────────┬──────┬──────┐
 //    │      │           │          │          │              │       │                     │                │                │              │                │      │      │
 //    ├──────┼───────────┼──────────┼──────────┼──────────────┼───────┤                     ├────────────────┼────────────────┼──────────────┼────────────────┼──────┼──────┤
@@ -127,16 +127,16 @@
   &kp CAPS   &sk LALT        &sk LEFT_GUI   &sk LSHFT    &sk LCTRL          &kp K_APPLICATION                                           &kp LEFT         &kp DOWN         &kp UP         &kp RIGHT         &kp PAGE_UP     &kp HOME
   &trans     &kp K_UNDO      &kp K_CUT      &kp K_COPY   &kp K_PASTE        &kp K_REDO          &kp C_MUTE           &kp C_PLAY_PAUSE   &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp PAGE_DOWN   &kp END
                              &trans         &trans       &trans             &trans              &trans               &trans             &mkp LCLK        &mkp RCLK        &mkp MCLK      &trans
-            >;
+        >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOL_DN>,
+        sensor-bindings =
+            <&inc_dec_kp C_VOLUME_UP C_VOL_DN>,
                 <&inc_dec_kp C_NEXT C_PREV>;
-        };
+    };
 
-        adjust_layer {
-            display-name = "sys";
-            bindings = <
+    adjust_layer {
+        display-name = "sys";
+        bindings = <
 //    ┌────────────┬──────────┬──────────┬──────────┬──────────┬────────────────┐                   ┌──────┬──────┬──────┬──────┬──────┬───────────┐
 //    │ bt_clr_ALL │ bt_sel 0 │ bt_sel 1 │ bt_sel 2 │ bt_sel 3 │    bt_sel 4    │                   │ mute │ vold │ volu │ bri- │ bri+ │    pwr    │
 //    ├────────────┼──────────┼──────────┼──────────┼──────────┼────────────────┤                   ├──────┼──────┼──────┼──────┼──────┼───────────┤
@@ -153,7 +153,7 @@
   &none            &none          &none          &none          &bootloader    &none                                    &none            &bootloader    &none              &none                  &none                  &none
   &none            &none          &none          &none          &none          &none            &none           &none   &none            &none          &none              &none                  &none                  &none
                                   &none          &none          &none          &none            &none           &none   &none            &none          &none              &none
-            >;
-        };
+        >;
     };
+};
 };
