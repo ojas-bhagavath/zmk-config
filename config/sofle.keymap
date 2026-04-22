@@ -37,9 +37,16 @@
     combos {
         compatible = "zmk,combos";
 
-        backspace {
+        escape {
             bindings = <&kp ESCAPE>;
             key-positions = <32 31>;
+            layers = <0>;
+        };
+
+        toggle_ipad {
+            bindings = <&tog 4>;
+            key-positions = <57 59>;
+            layers = <4 0>;
         };
     };
 
