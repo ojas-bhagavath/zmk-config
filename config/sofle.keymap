@@ -43,17 +43,19 @@
         };
     };
 
-    behaviors {
+behaviors {
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate-var"; // Change to rotate-var
-            #sensor-binding-cells = <2>;                   // Change to 2 cells
-            bindings = <&msc>, <&msc>;                     // Bind to the mouse scroll behavior
+            compatible = "zmk,behavior-sensor-rotate-var"; // Updated for better mouse support
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            tap-ms = <30>; // Lowered from 250 to 30 for responsiveness
         };
 
         scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
-            compatible = "zmk,behavior-sensor-rotate-var"; // Change to rotate-var
-            #sensor-binding-cells = <2>;                   // Change to 2 cells
-            bindings = <&msc>, <&msc>;                     // Bind to the mouse scroll behavior
+            compatible = "zmk,behavior-sensor-rotate-var"; // Updated for better mouse support
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+            tap-ms = <30>; // Lowered from 250 to 30 for responsiveness
         };
     };
 
@@ -81,10 +83,7 @@
                                 &sk LGUI   &sk LALT   &sk LCTRL   &sk LEFT_SHIFT   &sl 1           &sl 2   &mt RIGHT_SHIFT SPACE   &sk RCTRL   &sk RIGHT_ALT   &sk RGUI
             >;
 
-            sensor-bindings = <
-                <&scroll_left_right SCRL_RIGHT SCRL_LEFT>, 
-                <&scroll_up_down SCRL_UP SCRL_DOWN>
-            >;
+            sensor-bindings = <&scroll_left_right>, <&scroll_up_down>;
         };
 
         lower_layer {
