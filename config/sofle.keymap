@@ -50,6 +50,17 @@
             #binding-cells = <0>;
             continue-list = <POUND MINUS BACKSPACE UNDERSCORE>;
         };
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+
+        scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
+        };
     };
 
     keymap {
@@ -76,7 +87,7 @@
                                 &sk LGUI   &sk LALT   &sk LCTRL   &sk LEFT_SHIFT   &sl 1           &sl 2   &mt RIGHT_SHIFT SPACE   &sk RCTRL   &sk RIGHT_ALT   &sk RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>, <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&scroll_left_right>, <&scroll_up_down>;
         };
 
         lower_layer {
