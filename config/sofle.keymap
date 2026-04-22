@@ -76,7 +76,7 @@
   &mt LCTRL CAPSLOCK   &kp Z    &kp X      &kp C      &kp V       &kp B            &none           &none   &kp N                   &kp M       &kp COMMA       &kp DOT    &kp FSLH   &kp APOS
                                 &sk LGUI   &sk LALT   &sk LCTRL   &sk LEFT_SHIFT   &sl 1           &sl 2   &mt RIGHT_SHIFT SPACE   &sk RCTRL   &sk RIGHT_ALT   &sk RGUI
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>, <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
         };
 
         lower_layer {
